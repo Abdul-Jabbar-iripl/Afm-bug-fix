@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Your CSS styles go here */
+    </style>
+  </head>
+  <body>
+    <img
+      src="images/10.jpg"
+      alt=""
+      style="width: 450px; margin-bottom: 30px"
+      class="first-img"
+      onclick="toggleImageSize()"
+    />
+    <button onclick="resetImg()">Reset</button>
+
+    <script>
+      const img = document.querySelector(".first-img");
+      let enlarged = false; // Keep track of whether the image is enlarged
+
+      function toggleImageSize() {
+        if (!enlarged) {
+          img.style.width = "100%";
+        } else {
+          resetImg();
+        }
+        enlarged = !enlarged; // Toggle the flag
+      }
+
+      function resetImg() {
+        img.style.width = "450px"; // Adjust this to your default width
+        enlarged = false; // Reset the flag
+      }
+
+      // Function to handle the media query change
+      function handleMediaQuery(mediaQuery) {
+        if (mediaQuery.matches) {
+          // Apply your changes for max-width: 700px
+          if (enlarged) {
+            img.style.width = "100%";
+          }
+        } else {
+          // Reset to default behavior
+          resetImg();
+        }
+      }
+
+      // Create a media query list
+      const mediaQuery = window.matchMedia("(max-width: 700px)");
+
+      // Initial check
+      handleMediaQuery(mediaQuery);
+
+      // Attach a listener for changes in the media query
+      mediaQuery.addListener(handleMediaQuery);
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Your CSS styles go here */
+    </style>
+  </head>
+  <style>
+    @media only screen and (max-width: 700px) {
+      .first-img {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+      }
+    }
+  </style>
+  <body>
+    <img
+      src="images/10.jpg"
+      alt=""
+      style="width: 450px; margin-bottom: 30px"
+      class="first-img"
+      onclick="toggleImageSize()"
+    />
+    <button onclick="resetImg()">Reset</button>
+
+    <script>
+      const img = document.querySelector(".first-img");
+      let enlarged = false; // Keep track of whether the image is enlarged
+
+      function toggleImageSize() {
+        if (!enlarged) {
+          img.style.width = "100%";
+        } else {
+          resetImg();
+        }
+        enlarged = !enlarged; // Toggle the flag
+      }
+
+      function resetImg() {
+        img.style.width = "450px"; // Adjust this to your default width
+        enlarged = false; // Reset the flag
+      }
+
+      // Function to handle the media query change
+      function handleMediaQuery(mediaQuery) {
+        if (mediaQuery.matches) {
+          // Apply your changes for max-width: 700px
+          if (enlarged) {
+            img.style.width = "100%";
+          }
+        } else {
+          // Reset to default behavior
+          resetImg();
+        }
+      }
+
+      // Create a media query list for max-width: 700px
+      const mediaQuery = window.matchMedia("(max-width: 700px)");
+
+      // Attach a listener for changes in the media query
+      mediaQuery.addListener(handleMediaQuery);
+
+      // Initial check only if the media query matches (for mobile devices)
+      if (mediaQuery.matches) {
+        handleMediaQuery(mediaQuery);
+      }
+    </script>
+  </body>
+</html> -->

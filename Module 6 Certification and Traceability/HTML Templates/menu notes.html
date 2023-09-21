@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 p-0 mytogclass">
+        <div class="toggleitem">
+          <div class="custombar" onclick="openMy()">
+            <span class="custom_bar"></span>
+            <span class="custom_bar"></span>
+            <span class="custom_bar"></span>
+          </div>
+          <div class="closbar" onclick="closebar()">
+            <span class="close_bar1"></span>
+            <span class="close_bar2"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 p-0 mymainparthtml">
+        <!-- leftmenu Blue Part -->
+        <div class="sidebar" id="mysidebar">
+          <div class="innersider">
+            <img class="avilogo" src="images/logo.svg" />
+            <div class="username">
+              <div class="usericon">
+                <img src="images/usericon.svg">
+              </div>
+              <div class="usertext">
+                <h4>Arron Lee</h4>
+                <h6><span>Status:</span> <span class="Acitve">Active</span> <span>/ Plan:</span> Free</h6>
+              </div>
+            </div>
+            <div class="viewprofile">
+              <button class="goldenbtn">View Profile</button>
+            </div>
+            <div class="processbar">
+              <div class="progress">
+                <div class="progress-bar" style="width:10%" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+              </div>
+              <span>1% Complete</span>
+            </div>
+            <div class="buttonmargin">
+              <button class="goldenbtn">COURSE OUTLINE</button>
+            </div>
+            <div class="quickmenulinks">
+              <h2>MENU</h2>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="#">BOOKMARKS</a></li>
+                <li><a href="#">View Certificate</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End leftmenu Blue Part -->
+        <!-- start White Part -->
+        <div class="mainbody">
+          <div class="">
+            <!-- Start sticky icon -->
+            <div class="stikeybutton">
+              <div class="sitckyinner">
+                <div><button class="stikeybuttons addbtn"><img src="images/addnote.svg" />Add notes</button></div>
+                <div><button class="stikeybuttons bookbtn"><img src="images/Bookmark.svg" />BOOKMARK</button></div>
+              </div>
+            </div>
+            <!--End  sticky icon -->
+            <div class="contentpart">
+              <div class="titlehead">
+                <h2>NOTES</h2>
+
+              </div>
+              <div class="quediv">
+                <div class="table-responsive mycomantable">
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Date</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+
+                        <td>Introduction</td>
+                        <td>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</td>
+                        <td>10.08.22</td>
+                        <td>View</td>
+                      </tr>
+                      <tr>
+                        <td>Aviation fuel quality
+                          assurance and traceability</td>
+                        <td>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</td>
+                        <td>05.08.22</td>
+                        <td>View</td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- footer part -->
+      <div class="col-md-12 p-0">
+        <footer>
+          <div class="footertext">
+            <div>
+              <p>© Copyright 2022 Aviation Mastermind. All Rights Reserved.</p>
+            </div>
+            <div class="quicklinks"><a href="#">PRIVACY</a><a href="#">TERMS</a></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    if (window.innerWidth <= 480) {
+      function openMy () {
+        document.getElementById("mysidebar").style.width = "320px";
+        $("#mysidebar").fadeIn("slow");
+        $(".custombar").css("display", "none");
+        $(".closbar").css("display", "block");
+      }
+
+      function closebar () {
+        document.getElementById("mysidebar").style.width = "0";
+        $(".custombar").css("display", "block");
+        $(".closbar").css("display", "none");
+      }
+    }
+
+    if (window.innerWidth >= 481) {
+      function openMy () {
+        document.getElementById("mysidebar").style.width = "355px";
+        $("#mysidebar").fadeIn("slow");
+        $(".custombar").css("display", "none");
+        $(".closbar").css("display", "block");
+      }
+
+      function closebar () {
+        document.getElementById("mysidebar").style.width = "0";
+        $(".custombar").css("display", "block");
+        $(".closbar").css("display", "none");
+      }
+    }
+    if (window.innerWidth <= 374) {
+      function openMy () {
+        document.getElementById("mysidebar").style.width = "280px";
+        $("#mysidebar").fadeIn("slow");
+        $(".custombar").css("display", "none");
+        $(".closbar").css("display", "block");
+      }
+
+      function closebar () {
+        document.getElementById("mysidebar").style.width = "0";
+        $(".custombar").css("display", "block");
+        $(".closbar").css("display", "none");
+      }
+    }
+
+  </script>
+</body>
+
+</html>
